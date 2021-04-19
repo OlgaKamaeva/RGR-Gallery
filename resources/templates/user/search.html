@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="_csrf" th:content="${_csrf.token}" />
+	<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+    <link rel="stylesheet" th:href="@{/css/search.css}">
+    <title>search</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script th:src="@{/js/search.js}" defer="defer"></script>
+</head>
+<body>
+<div>
+        <div class="top">
+            <div class="logo">
+                <a href="profile"><img src="../img/logo.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="search">
+            <div class="searchLine">
+                <div class="radio-container">
+                    <div class="form-item radio-btn nth-2">
+                        <input type="radio" name="option1" id="radio1" checked value="email">
+                        <label for="radio1" th:text="#{email.holder}"></label>
+                    </div>
+                    <div class="form-item radio-btn nth-2">
+                        <input type="radio" name="option1" id="radio2" value="city">
+                        <label for="radio2" th:text="#{city.holder}"></label>
+                    </div>
+                    <div class="form-item radio-btn nth-2">
+                        <input type="radio" name="option1" id="radio3" value="education">
+                        <label for="radio3" th:text="#{education.holder}"></label>
+                    </div>
+                    <div class="form-item radio-btn nth-2">
+                        <input type="radio" name="option1" id="radio4" value="hobby">
+                        <label for="radio4" th:text="#{hobby.holder}"></label>
+                    </div>
+                    <div class="form-item radio-btn nth-2">
+                        <input type="radio" name="option1" id="radio5" value="name">
+                        <label for="radio5" th:text="#{name.holder}"></label>
+                    </div>
+                    <div class="form-item radio-btn nth-2">
+                        <input type="radio" name="option1" id="radio6" value="surname">
+                        <label for="radio6" th:text="#{surname.holder}"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="searchIn">
+                <div id="butSearch" class="redIn" th:text="#{buttom.search}"></div>
+                <div><input id="userFilter" class="notRedIn" type="text" th:placeholder="#{text.holder}"></div>
+            </div>
+            <div class="searchFind">
+                <div class="match" th:text="#{search.matching}"></div>
+                <li id="pressetMatch" hidden>
+                	<div class="findPeople">
+                    	<div id="person0" class="onePerson">
+                    		<a id="href" href="profile">
+                        	<div class="namePerson">
+                            	<div id="firstNamePerson0" class="firstName"></div>
+                            	<div id="lastNamePerson0"></div>
+                            </div>
+
+                        	<div class="login" id="loginPerson0"></div>
+                        	</a>
+                    	</div>
+                	</div>
+                </li>
+                <ul id="resultList">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>

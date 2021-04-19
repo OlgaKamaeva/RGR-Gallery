@@ -1,0 +1,129 @@
+body{
+    background-color: #4a4a4a;
+    font-family: Calibri;
+    background-image:
+        linear-gradient(to top, rgba(74, 74, 74, 0.2), rgba(74,74,74,0.2)),
+        url("../img/nature.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0px;
+}
+
+.top{
+    height: 80px;
+    background-color: #3d3d3d;
+    position: fixed;
+    top:0;
+    z-index: 9999;
+    width: 100%;
+}
+
+.logo{
+    padding: 25px;
+    padding-left: 70px;
+}
+
+.bottom{
+    height: 40px;
+    background-color: #3d3d3d;
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+
+.container{
+    width: 1000px;
+    height: 100%;
+    min-height: 90vh;
+    padding: 1px;
+    background-color: #635f5cde;
+    text-transform: uppercase;
+    margin: 80px auto 0 auto;
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.friends img{
+    width: 15px;
+    height: 15px;
+    padding: 0px 10px;
+    margin-top: 7px;
+}
+
+.redLine{
+    background-color: #ff3535;
+    padding: 5px 50px;
+    margin: 30px 0px;
+    position: relative;
+    display: flex;
+}
+
+.butFriendReq{
+    color: #ffffff70;
+    position:absolute;
+    right: 50px;
+}
+
+.friends{
+    margin-left: 3%;
+}
+
+.oneFriend{
+    width: 650px;
+    height: 28px;
+    background-color: #ffffff70;
+    border-radius: 40px;
+    margin: 10px 0px;
+    padding: 5px 20px;
+    position: relative;
+    display: flex;
+}
+
+.delete{
+    position:absolute;
+    right: 10px;
+}
+
+.submit{
+    position:absolute;
+    display:none;
+    right: 30px;
+}
+
+.nameLogin, .nameFriend{
+    display: flex;
+    margin-right: 5px;
+}
+
+.friends a{
+    display: flex;
+}
+
+.firstName{
+    margin-right: 5px;
+}
+
+.login{
+    color: #ffffff70;
+}
+
+.link {
+	height: 100%; /* ������ �� ���� ���� */
+	width: 100%;
+	z-index: 9999;
+}

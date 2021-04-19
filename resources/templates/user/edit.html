@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/edit.css}" type="text/css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script th:src="@{/js/loadFoto.js}" defer="defer"></script>
+    <title>edit</title>
+</head>
+<body>
+    <form class="container" id="myForm" action="#" method="post" th:action="@{/edit}" th:object="${userForm}" enctype="multipart/form-data">
+        <div class="profile">
+            <div class="profilePhoto">
+                <img th:src="@{/avatar/big/} + ${user.login}" height="200" width="200" class="foto">
+                <div class="input_file">
+                    <input type="file" name="files" class="hid">
+                    <input type="button" class="fake_file" value="upload" id="sub">
+                </div>
+            </div>
+            <div class="profileInfo">
+                <div id="firstName" class="infoBlock">
+                    <div class="information" th:text="#{name.holder} + @{:}"></div>
+                    <div class="InfErr">
+                        <input type="text" name="name" placeholder="name" minlength="4" maxlength="15" th:field="*{firstName}">
+                        <span th:errors="*{firstName}"></span>
+                    </div>
+                </div>
+                <div id="lastName" class="infoBlock">
+                    <div class="information" th:text="#{surname.holder} + @{:}"></div>
+                    <div class="InfErr">
+                        <input type="text" name="surname" placeholder="surname" minlength="4" maxlength="15" th:field="*{lastName}">
+                        <span th:errors="*{lastName}"></span>
+                    </div>
+                </div>
+                <div id="login" class="infoBlock">
+                    <div class="information" th:text="#{login.holder} + @{:}"></div>
+                    <div class="InfErr">
+                        <div id="@"><p>@</p></div>
+                        <input type="text" name="login" placeholder="login" minlength="6" maxlength="15" th:field="*{login}">
+                        <span th:errors="*{login}"></span>
+                    </div>
+                </div>
+
+                <div id="email" class="infoBlock">
+                	<div class="information" th:text="#{email.holder} + @{:}"></div>
+                	<div id="emailInf" th:text="${user.email}"><p></p></div>
+               	</div>
+                <div id="dateHB" class="infoBlock">
+	                <div class="information" th:text="#{birthday.holder} + @{:}"></div>
+	                <div id="birthdayInf" th:text="${#dates.format(user.dateBirthday, 'dd.MM.yyyy')}"><p></p></div>
+                </div>
+
+
+
+                <div id="city" class="infoBlock">
+                    <div class="information" th:text="#{city.holder} + @{:}"></div>
+                    <div class="InfErr">
+                        <input type="text" name="city" placeholder="city" minlength="4" maxlength="15" th:field="*{city}">
+                        <span th:errors="*{city}"></span>
+                    </div>
+                </div>
+                <div id="education" class="infoBlock">
+                    <div class="information" th:text="#{education.holder} + @{:}"></div>
+                    <div class="InfErr">
+                        <input type="text" name="education" placeholder="education" minlength="4" maxlength="15" th:field="*{education}">
+                        <span th:errors="*{education}"></span>
+                    </div>
+                </div>
+                <div id="hobby" class="infoBlock">
+                    <div class="information" th:text="#{hobby.holder} + @{:}"></div>
+                    <div class="InfErr">
+                    <div><input id="tagsNewNews" th:field="*{hobby}" class="notRedTags" type="text" placeholder="#tags"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dws-submit" id="subret">
+        	<a class="submit" th:text="#{buttom.submit}"></a>
+        </div>
+    </form>
+<div class="top">
+	<div class="logo">
+    	<a href="/profile"><img src="../img/logo.png"></a>
+    </div>
+    <div class="logOutBox">
+    	<div><a href="logout" class="logOut" th:text="#{logOut}"></a></div>
+    	<a href="/profile" class="edit"><img src="../img/editRed.png" onclick='this.src="../img/edit.png"'></a>
+	</div>
+</div>
+    <div class="bottom"></div>
+</body>
+</html>

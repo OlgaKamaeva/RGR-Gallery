@@ -1,0 +1,652 @@
+body{
+    background-color: #4a4a4a;
+    background-image:
+    linear-gradient(to top, rgba(74, 74, 74, 0.2), rgba(74,74,74,0.2)),
+    url("../img/nature.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Calibri;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0px;
+}
+
+.top{
+    height: 80px;
+    background-color: #3d3d3d;
+    position: fixed;
+    top:0;
+    z-index: 9999;
+    width: 100%;
+}
+
+.logo{
+    padding: 25px;
+    padding-left: 70px;
+}
+
+.edit{
+    position:absolute;
+    left:87%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    max-width:100%;
+    max-height: 100%;
+}
+
+.bottom{
+    height: 40px;
+    background-color: #3d3d3d;
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+
+.container{
+    width: 1000px;
+    max-weight: 1000px;
+    height: 100%;
+    min-height: 90vh;
+    background-color: #635f5cde;
+    padding: 35px;
+    text-transform: uppercase;
+    margin: 80px auto 0 auto;
+
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.profile{
+    padding-bottom: 20px;
+    width: 100%;
+
+    display: flex;
+}
+
+.profilePhoto img{
+    width: 200px;
+    height: 200px;
+    background-color: #a7a7a77c;
+    border-radius: 20px;
+    border: 2px solid #ff3535;
+    margin: auto;
+}
+
+.profilePhoto{
+    width: 220px;
+}
+
+.butMain {
+  display: block;
+  margin-left: auto;
+  margin-right: -35px;
+}
+
+.butFriend{
+    width: 150px;
+    height: 35px;
+    overflow: hidden;
+    background-color: #b1b1b1;
+    border-radius: 0 0 0 50px;
+    border-left: 5px solid #ff3535;
+    border-bottom: 5px solid #ff3535;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Calibri;
+    letter-spacing: 2px;
+    text-align: center;
+    -webkit-transition: 0.5s linear;
+  -moz-transition: 0.5s linear;
+  -o-transition: 0.5s linear;
+  transition: 0.5s linear;
+}
+
+#butFriend{
+    color: #ff3535;
+}
+
+.butFriend:active{
+    background-color: #ffffff;
+    color: #ff3535;
+}
+
+.butFriend:hover{
+    background-color: #fafafa;
+    color: #ff3535;
+}
+
+A{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.profileInfo{
+    padding: 0px 0px 0px 30px;
+    width: 600px;
+    min-width: 550px;
+}
+
+.nameLogin, #city, #education, #hobby{
+    display: flex;
+    border-bottom: 2px solid #414141;
+    padding: 10px 0px;
+}
+
+#information{
+    color: #ffffff70;
+    margin-right: 10px;
+}
+
+.emailDate{
+    margin: 10px 0px;
+}
+
+moreInfo{
+    border-top: 2px solid #414141;
+    padding-top: 10px;
+}
+
+.login{
+    margin-left: 10px;
+    color: #ffffff70;
+}
+
+.buttoms{
+    padding: 0px 0px 0px 30px;
+}
+
+.newsImg {
+margin: 0 2% 0 2%;
+max-height: 450px;
+max-width: 1000px;
+-webkit-transition: top 1s ease-out 0.5s;
+  -moz-transition: top 1s ease-out 0.5s;
+  -o-transition: top 1s ease-out 0.5s;
+  transition: top 1s ease-out 0.5s;
+}
+
+.newsIcon {
+    width: 10px;
+    height: 10px;
+    padding: 0px 10px;
+}
+
+.createNews{
+    background-color: #a79797;
+    display: block;
+    border-radius: 20px;
+    margin: 15px 0px;
+}
+
+
+
+.newsnews{
+    background-color: #726969;
+    border-radius: 20px;
+    margin: 15px 0px;
+    position: relative;
+}
+
+li{
+    list-style-type: none;
+}
+
+ul{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#redLine{
+    display: flex;
+    background-color: #ff3535;
+    border-radius: 20px 20px 0px 0px;
+    padding: 3px 30px;
+}
+
+.newNewsTextArea {
+    overflow: auto;
+    resize: none;
+    width: 937px;
+    height: 100px;
+    padding: 10px 30px;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: Calibri;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    border: none;
+}
+
+.radio-container{
+display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-wrap: wrap;
+border-radius: 20px;
+margin: 0px 5px;
+}
+.radio-container *{
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+}
+.radio-container .radio-btn:last-child{
+border-right: 0px;
+}
+.radio-container .radio-btn.nth-2{width: 130px;}
+.radio-container .radio-btn label{
+background-color: #ffffff2a;
+color: #000;
+display: block;
+padding: 6px 12px;
+text-align: center;
+border-radius: 20px;
+}
+.radio-container .radio-btn input{display: none;}
+.radio-container .radio-btn input:checked + label{
+background-color: #ff3535;
+color: #fff;
+}
+
+.buttomsNews{
+    display: flex;
+    font-size: 13px;
+    padding: 20px 15px;
+}
+
+.left{
+    width: 535px;
+    display: flex;
+}
+
+.right{
+  right: 5%;
+    width: 154px;
+}
+
+.addFoto, .create{
+    width: 106px;
+    height: 16px;
+    display: inline;
+    padding: 6px 12px;
+    margin: 0px 5px;
+    text-align: justify;
+    border-radius: 20px;
+    background-color: #ff3535;
+    margin: 0px 3px;
+    cursor: pointer;
+    font-size: 13px;
+    text-align:center;
+}
+
+.hid {
+  opacity: 0;
+  top: -5px;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
+  width: 106px;
+}
+
+.fake_file {
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  behavior: url(PIE.htc);
+  background-color: #ff3535;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+
+.tags{
+    display: flex;
+    margin: 0px 5px;
+}
+
+.redTags{
+    width: 50px;
+    padding: 6px 2px 6px 12px;
+    border-radius: 20px 0px 0px 20px;
+    background-color: #ff3535;
+    margin: 0px 0px;
+    cursor: pointer;
+    text-align: right;
+    font-size: 13px;
+    text-align:center;
+}
+
+.notRedTags{
+    width: auto;
+    padding: 6px 12px 6px 2px;
+    border-radius: 0px 20px 20px 0px;
+    background-color: #4b4b4b;
+    margin: 0px 0px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+    text-decoration: none;
+    border-style: none;
+    color: #ffffff;
+    font-family: Calibri;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    border: none;
+}
+
+.inputForm {
+width: 895px;
+    padding: 6px 12px 6px 2px;
+    border-radius: 20px 0px 0px 20px;
+    background-color: #4b4b4b;
+    margin: 0px 0px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+    text-decoration: none;
+    border-style: none;
+    color: #fafafa;
+    font-family: Calibri;
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    border: none;
+}
+
+.inputFormBut {
+width: 80px;
+    padding: 6px 2px 6px 12px;
+    border-radius: 0px 20px 20px 0px;
+    background-color: #ff3535;
+    margin: 0px 0px;
+    cursor: pointer;
+    text-align: center;
+    font-family: Calibri;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    color: #ffffff;
+    text-align:center;
+    outline: none !important;
+    border: 0 !important;
+}
+
+.nameLog{
+    display: flex;
+    width: 400px;
+}
+
+.buttonEditDelete, .fieldInfo{
+    display: flex;
+    font-size: 20px;
+}
+
+#butEditDel, #butCom, #butComCreate{
+    color: #ffffff70;
+}
+
+.nameLog{
+    width: 782px;
+}
+
+.dropNews {
+width: 50px;
+    height: 16px;
+    display: inline;
+    padding: 6px 12px;
+    margin: 0px 5px;
+    text-align: justify;
+    border-radius: 20px;
+    background-color: #ff3535;
+    margin: 0px 3px;
+    cursor: pointer;
+    font-size: 13px;
+    text-align:center;
+}
+
+.newsContent {
+    width: 937px;
+    height: auto;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+}
+
+.leftField{
+    width: 800px;
+    height: auto;
+    display: flex;
+    font-size: 13px;
+    padding: 20px 15px;
+}
+
+.buttomComment{
+    position:absolute;
+    bottom: 15px;
+    right: 30px;
+}
+
+#date{
+    color: #000;
+    margin: 0px 3px;
+    padding: 6px 0px;
+}
+
+#levelView{
+    width: 126px;
+    height: 18px;
+    padding: 0px 10px;
+    text-align: justify;
+    border-radius: 20px;
+    background-color: #ff3535;
+    margin: 5px 3px 0px 3px;
+    text-align:center;
+}
+
+#tags{
+    width: 700px;
+    color: #ffffff;
+    margin: 0px 3px;
+    padding: 6px 0px;
+}
+
+#lvlTags{
+    display: flex;
+    height: auto;
+    flex-flow: column wrap;
+    align-content: flex-start;
+}
+
+.comments{
+    height: auto;
+    background-color: #726969;
+    border-radius: 20px;
+    margin: 15px 0px 15px 200px;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.nameLogCom{
+    width: 300px;
+}
+
+.topCom{
+    display: flex;
+}
+
+.comCont{
+    width: 490px;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.textAreaComCont {
+    overflow: hidden;
+    resize: none;
+    width: 480px;
+    height: 60px;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: Calibri;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    border: none;
+}
+
+.botCom{
+    display: flex;
+}
+
+#dateCom{
+    color: #000;
+    margin: 0px 3px;
+    padding: 6px 0px;
+    font-size: 13px;
+}
+
+#butComCreate{
+    position:absolute;
+    z-index: 0;
+    right: 30px;
+}
+
+.iw-modal-btn {
+background:#013C74; /*���� ���� ������*/
+color:#fff; /*���� ������*/
+text-align:center;
+display:inline-block;
+padding:10px 20px; /*���������� �������*/
+text-decoration:none;
+font-size:17px; /*������ ������*/
+margin-top:30px;
+transition: all 0.5s ease;
+
+}
+
+/*CSS-�������� ��� ������� ����*/
+.iw-modal {
+opacity: 0; /*���������� ���� ���� ������ ���� ����������*/
+background: rgba(0,0,0,0.7); /*����� ���� ����*/
+pointer-events: none; /*������ ����� �� �������� ������ ���� �������� ����� �� ����������*/
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 9999;
+transition: all 0.5s ease;
+margin: 0;
+padding: 0;
+}
+
+.iw-modal-wrapper {
+margin: 0 auto 0 auto; /*����������� ��������� ���� �� ������ �� �����������*/
+margin-top:25vh; /*������ ������ ����� �������� � px, % ��� vh*/
+}
+
+.message{
+width: 750px;
+height: 300px;
+border-radius: 20px;
+background-color: #a7a7a7;
+text-transform: uppercase;
+margin: 150px auto 0 auto;
+position: relative;
+}
+
+.redLineMes{
+background-color: #ff3535;
+padding: 5px 20px;
+border-radius: 20px 20px 0px 0px;
+position: relative;
+display: flex;
+}
+
+.message img{
+width: 15px;
+height: 15px;
+padding: 0px 10px;
+}
+
+.nameLoginMessage{
+display: flex;
+margin-right: 5px;
+}
+
+.firstName, .to{
+margin-right: 5px;
+}
+
+.login{
+color: #ffffff70;
+}
+
+.delete{
+position:absolute;
+margin-top: 5px;
+right: 10px;
+}
+
+.butSentMes{
+width: 200px;
+border-radius: 20px;
+background-color: #ff3535;
+margin: 0px 3px;
+cursor: pointer;
+text-decoration: none;
+text-transform: uppercase;
+font-family: Calibri;
+letter-spacing: 2px;
+border-style: none;
+text-align: center;
+position: absolute;
+bottom: 20px;
+right: 20px;
+}
+
+.subject {
+color: #ffffff;
+font-family: Calibri;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-size: 20px;
+background-color: transparent;
+border: none;
+border-bottom: 1px solid #4b4b4b;
+margin: 10px 0 0 30px;
+}
+
+#textMes {
+overflow: hidden;
+resize: none;
+width: 689px;
+height: 170px;
+padding: 10px 30px;
+background-color: transparent;
+color: #ffffff;
+font-family: Calibri;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-size: 20px;
+border: none;
+}
+
+.hideInf {
+color: #ffffff70;
+}

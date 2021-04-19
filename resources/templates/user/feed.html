@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="_csrf" th:content="${_csrf.token}" />
+	<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script th:src="@{/js/main.js}" defer="defer"></script>
+    <link rel="stylesheet" th:href="@{/css/profile.css}">
+    <title>Feed</title>
+</head>
+<body>
+	<div class="top">
+	<div class="logo">
+    	<a href="/profile"><img src="../img/logo.png"></a>
+    </div>
+    <a href="/edit" class="edit"><img src="../img/edit.png" onclick='this.src="../img/editRed.png"'></a>
+</div>
+<div class="parrent">
+    <div class="container">
+        <div class="news">
+            <div class="search">
+                <input class="inputForm" id="userFilter" type="text" th:placeholder="#{text.holder}">
+				<input class="inputFormBut"type="button" id="test" value="search">
+            </div>
+            <ul>
+                <li style="display:none">
+                        <div id="pressetNews" class="newsnews" >
+                            <div id="redLine">
+                                <div class="nameLog">
+                                    <div id="nameAuthor" ></div>
+                                    <div id="loginAuthor" class="login"></div>
+                                </div>
+                            </div>
+
+                            <div class="newsContent">
+                            <span id="errorSpan"></span>
+                                <pre>
+                            	</pre>
+                            	<img class="newsImg" alt=" ">
+                            </div>
+
+                            <div class="bot">
+                                <div class="fieldInfo">
+                                    <div class="leftField">
+                                        <div id="date"></div>
+                                        <div id="levelView" th:text="#{buttom.forFriends}"></div>
+                                        <div id="tags"></div>
+                                    </div>
+                                    <div class="buttomComment">
+                                            <a id="butCom" href="#comment" th:text="#{buttom.comment}"><img class="newsIcon" src="../img/circle.png"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul id="commentList">
+                        	<li style="display:none">
+                        		<div id="createNewComments" class="comments">
+                                    <div class="topCom">
+                                        <textarea class="textAreaComCont"></textarea>
+                                    </div>
+
+                                <div class="botCom">
+                                    <div class="nameLogCom">
+                                        <div id="login" th:text="@{@} + ${user.login}"></div>
+                                    </div>
+                                    <a id="butComCreate" class="butComCreate" th:text="#{buttom.create}"><img class="newsIcon" src="../img/circle.png"></a>
+                                </div>
+                                </div>
+                        	</li>
+                            <li id="pressetComment">
+                                <div class="comments">
+                                    <div class="topCom">
+                                    	<span id="errorSpan"></span><br>
+                                        <div class="comCont">
+                                        </div>
+                                    </div>
+                                    <div class="botCom">
+                                        <div id="dateCom"></div>
+                                        <div class="nameLogCom">
+                                            <div id="loginCom" class="login"></div>
+                                        </div>
+                                        <div>
+                                        <a id="butComCreate" class="saveOldComment" style="display:none" th:text="#{buttom.save}"><img class="newsIcon" src="../img/circle.png"></a>
+                                        <a id="butComCreate" class="editOldComment" style="display:block" th:text="#{buttom.edit}"><img class="newsIcon" src="../img/circle.png"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                <ul id="newsList">
+                    <li th:each="new1, st: ${news}">
+                        <div th:id="${new1.id}" class="newsnews" >
+                            <div id="redLine">
+                                <div class="nameLog">
+                                    <div id="name" th:text="${user.lastName} + @{ } + ${user.firstName}"></div>
+                                    <div id="login" class="login" th:text="@{@} + ${new1.author.login}"></div>
+                                </div>
+                            </div>
+
+                            <div class="newsContent" >
+                            	<span id="errorSpan"></span>
+                            	<pre th:text="${new1.text}">
+
+                            	</pre>
+                                <img th:src="@{/news/image/} + ${new1.imageToken}" class="newsImg" alt=" " onerror="this.style.visibility = 'hidden'">
+                            </div>
+
+                            <div class="bot">
+                                <div class="fieldInfo">
+                                    <div class="leftField">
+                                        <div id="date" th:text="${#dates.format(new1.newsDate, 'dd.MM.yy')}"></div>
+                                        <div id="levelView" th:if="${new1.forFriends} == true" th:text="#{buttom.forFriends}"></div>
+                                        <div id="tags" ><a th:each="tag : ${new1.tags}" th:text="@{#} + ${tag.name} + @{ }"></div>
+                                    </div>
+                                    <div class="buttomComment">
+                                            <a id="butCom" href="#comment" th:text="#{buttom.comment}"><img class="newsIcon" src="../img/circle.png"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul>
+                        	<li style="display:none">
+                        		<div id="createNewComments" class="comments">
+                                    <div class="topCom">
+                                    	<span id="errorSpan"></span>
+                                        <textarea class="textAreaComCont"></textarea>
+                                    </div>
+
+                                	<div class="botCom">
+                                    	<div class="nameLogCom">
+                                        	<div id="login" th:text="@{@} + ${user.login}"></div>
+                                    	</div>
+                                    <a id="butComCreate" class="butComCreate" th:text="#{buttom.create}"><img class="newsIcon" src="../img/circle.png"></a>
+                                	</div>
+                                </div>
+                        	</li>
+                            <li th:each="comment, st: ${new1.comments}">
+                                <div th:id="${comment.id}" class="comments">
+                                    <div class="topCom">
+                                    	<span id="errorSpan"></span>
+                                        <div class="comCont" th:text="${comment.text}"></div>
+                                    </div>
+                                    <div class="botCom">
+                                        <div id="dateCom" th:text="${#dates.format(comment.commentDate, 'dd.MM.yy')}"></div>
+                                        <div class="nameLogCom">
+                                            <div id="login" th:text="@{@} + ${comment.commentator.firstName}"></div>
+                                        </div>
+                                        <div th:if="${user.id} == ${comment.commentator.id}">
+                                        <a id="butComCreate" class="saveOldComment" style="display:none" th:text="#{buttom.save}"><img class="newsIcon" src="../img/circle.png"></a>
+                                        <a id="butComCreate" class="editOldComment" style="display:block" th:text="#{buttom.edit}"><img class="newsIcon" src="../img/circle.png"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>

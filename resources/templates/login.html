@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="_csrf" th:content="${_csrf.token}" />
+	<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script th:src="@{/js/script.js}" defer="defer"></script>
+    <title>SNET</title>
+</head>
+<body>
+	<div class="containerLogin">
+        <form id="myform" th:action="@{/login}" method="post">
+
+        	<div th:if="${param.error}">
+            	<div class="alert alert-danger">
+                	Invalid username or password.
+            	</div>
+        	</div>
+            <input type="text" name="username" th:placeholder="#{login.holder}">
+            <input type="password" name="password" th:placeholder="#{password.holder}">
+            <a class="dws-link" id="forgot" th:text="#{password.forgot}"></a>
+            <div href="" id="subret" class="dws-submit">
+                <a class="submit" th:text="#{buttom.submit}"></a>
+            </div>
+        </form>
+        <div id="forgotPassword" hidden>
+			<input type="text" id="loginPass" placeholder="login" minlength="6" maxlength="15">
+			<div id="requestPassword" class="dws-submit">
+				<a class="submit" th:text="#{buttom.submit}"></a>
+			</div>
+    	</div>
+    </div>
+    <div class="top">
+        <div class="logo">
+            <img src="../img/logo.png">
+        </div>
+            <a href="/registration" class="signup" th:text="#{signUp}"></a>
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>

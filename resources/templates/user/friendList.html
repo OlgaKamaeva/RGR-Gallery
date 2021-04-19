@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="_csrf" th:content="${_csrf.token}" />
+	<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script th:src="@{/js/friends.js}" defer="defer"></script>
+    <link rel="stylesheet" th:href="@{/css/friend.css}">
+    <title>Friends</title>
+</head>
+<body>
+<div>
+        <div class="top">
+            <div class="logo">
+                <a href="/profile"><img src="../img/logo.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="redLine">
+                <div class="nameLogin">
+                	<div id="idUser" hidden th:text="${user.id}"></div>
+                    <div id="firstName" class="firstName" th:text="${user.lastName}"></div>
+                    <div id="lastName" th:text="${user.firstName}"></div>
+                </div>
+                    <div id="login" class="login" th:text="@{@} + ${user.login}"></div>
+                    <a th:if="${owner} == true" class="butFriendReq" th:text="#{friend.requests}"></a>
+        </div>
+        <li id="pressetFriend" style="display:none">
+            <div id="friend0" class="oneFriend">
+
+            	<a href="profile">
+                	<div class="nameFriend">
+                		<p class="friendToken" hidden>
+                    	<div id="firstNameFriend0" class="firstName"><p></p></div>
+                    	<div id="lastNameFriend0"><p></p></div>
+                	</div>
+                	<div class="login" id="loginFriend0"><p></p></div>
+                </a>
+                <div th:if="${owner} == true">
+                	<a  class="submit"><img src="../img/circleRed.png"></a>
+                	<a class="delete"><img src="../img/x.png"></a>
+                </div>
+            </div>
+            </li>
+        </ul>
+        <ul id="friendList" class="friends">
+        <li th:each="fr, st: ${friends}">
+            <div th:id="${fr.friend.id}" class="oneFriend">
+            	<a th:href="@{/u/} + ${fr.friend.id}">
+                <div class="nameFriend">
+                    <div id="firstNameFriend0" class="firstName" th:text="${fr.friend.firstName}"></div>
+                    <div id="lastNameFriend0" th:text="${fr.friend.lastName}"></div>
+                </div>
+                <div class="login" id="loginFriend0" th:text="@{@} + ${fr.friend.login}"></div>
+                </a>
+                <div th:if="${owner} == true">
+                	<a class="delete"><img src="../img/x.png"></a>
+                </div>
+            </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="bottom"></div>
+</body>
+</html>
